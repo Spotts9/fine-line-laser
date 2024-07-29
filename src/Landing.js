@@ -1,28 +1,20 @@
 import * as React from 'react';
-import PropTypes from 'prop-types'
-import { BrowserRouter } from 'react-router-dom';
-import { Routes,  Route } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-
+import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import AutoAwesomeRoundedIcon from '@mui/icons-material/AutoAwesomeRounded';
-
-
-import Landing from './Landing';
-import ContactUs from './components/Contact';
-import AboutUs from './components/AboutUs';
 import HeaderBar from './components/HeaderBar';
-
+import Hero from './components/Hero';
+import AboutUs from './components/AboutUs'
+import Footer from './components/Footer';
 import getLPTheme from './lpTheme';
-import './App.css';
-
-
-
-// const defaultTheme = getLPTheme;
+import ContactUs from './components/Contact';
+import Portfolio from './components/Portfolio';
 
 function ToggleCustomTheme({ showCustomTheme, toggleCustomTheme }) {
   return (
@@ -65,7 +57,8 @@ ToggleCustomTheme.propTypes = {
   }).isRequired,
   toggleCustomTheme: PropTypes.func.isRequired,
 };
-function App() {
+
+export default function LandingPage() {
   const [mode, setMode] = React.useState('light');
   const [showCustomTheme, setShowCustomTheme] = React.useState(true);
   const LPtheme = createTheme(getLPTheme(mode));
@@ -78,29 +71,25 @@ function App() {
   const toggleCustomTheme = () => {
     setShowCustomTheme((prev) => !prev);
   };
+
   return (
-    <BrowserRouter>
     <ThemeProvider theme={showCustomTheme ? LPtheme : defaultTheme}>
-
-    <CssBaseline />
-    <HeaderBar  mode={mode} toggleColorMode={toggleColorMode} />
-    {/* <Hero /> */}
-    <Box sx={{ bgcolor: 'background.default' }}>
-
-    </Box>
-    <Routes>
-      <Route path="/" element ={<Landing />} />
-      <Route path="/contact" element={<ContactUs />}/>
-      <Route path="/about" element={<AboutUs />}/>
-    </Routes>
-      {/* <Error type="404" default /> */}
+      <CssBaseline />
+      <HeaderBar mode={mode} toggleColorMode={toggleColorMode} />
+      <Hero />
+      <Box sx={{ bgcolor: 'background.default' }}>
+        <AboutUs />
+        <Divider />
+        <ContactUs />
+        <Divider />
+        <Portfolio />
+        <Divider />
+        <Footer />
+      </Box>
       <ToggleCustomTheme
         showCustomTheme={showCustomTheme}
         toggleCustomTheme={toggleCustomTheme}
       />
     </ThemeProvider>
-    </BrowserRouter>
   );
 }
-
-export default App;
