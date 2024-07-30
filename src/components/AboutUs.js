@@ -28,7 +28,7 @@ export default function AboutUs() {
         gap: { xs: 3, sm: 6 },
       }}
     >
-      <Typography
+      {/* <Typography
         component="h2"
         variant="h4"
         color="text.primary"
@@ -36,8 +36,17 @@ export default function AboutUs() {
           width: { sm: '100%', md: '60%' },
           textAlign: { sm: 'left', md: 'center' },
         }}
+      > */}
+      <Typography
+        component="h2"
+        variant="h4"
+        color="text.primary"
+        sx={{
+          width: { sm: '100%', md: '60%' },
+          textAlign: { sm: 'center', md: 'center' },
+        }}
       >
-        About Fine Line Laser Cutting
+        About FLLC
       </Typography>
       <Box sx={{ width: '100%' }}>
         <Accordion
@@ -104,7 +113,7 @@ export default function AboutUs() {
             id="panel3d-header"
           >
             <Typography component="h3" variant="h5">
-                Why Choose Fine Line Laser Cutting?
+                Why Choose FLLC?
             </Typography>
           </AccordionSummary>
           <AccordionDetails>

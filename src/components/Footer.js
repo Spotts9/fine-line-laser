@@ -85,7 +85,7 @@ export default function Footer() {
           >
             <FacebookIcon />
           </IconButton>
-          <IconButton
+          {/* <IconButton
             color="inherit"
             href="https://x.com/MaterialUI"
             aria-label="X"
@@ -100,7 +100,7 @@ export default function Footer() {
             sx={{ alignSelf: 'center' }}
           >
             <LinkedInIcon />
-          </IconButton>
+          </IconButton> */}
         </Stack>
       </Box>
     </Container>
