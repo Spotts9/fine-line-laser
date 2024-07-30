@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Typography from '@mui/material/Typography';
+import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import ImageCarousel from './ImageCarousel';
@@ -25,7 +26,7 @@ export default function Portfolio() {
     >
     <Typography
         component="h2"
-        variant="h2"
+        variant="h4"
         color="text.primary"
         sx={{
           width: { sm: '100%', md: '60%' },
@@ -33,16 +34,21 @@ export default function Portfolio() {
         }}
       >
         Portfolio
-      </Typography>
-      <Grid container spacing={2}
+    </Typography>
+    <Stack spacing={1} useFlexGap sx={{ width: { xs: '100%', sm: '70%' } }}>
+
+      <Grid container spacing={1}
               sx={{
                 width: { sm: '100%', md: '80%' },
-                textAlign: { sm: 'left', md: 'center' },
+                textAlign: { sm: 'center', md: 'center' },
                 // mt: { xs: 8, sm: 10 },
                 alignSelf: 'center',
+                justifyContent: 'center',
+                justifyItems: 'center',
               }}>
           <ImageCarousel />
       </Grid>
+      </Stack>
     </Container>
   );
 }

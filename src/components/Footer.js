@@ -7,8 +7,8 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
 import FacebookIcon from '@mui/icons-material/Facebook';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/X';
+// import LinkedInIcon from '@mui/icons-material/LinkedIn';
+// import TwitterIcon from '@mui/icons-material/X';
 import  logoImg from '../assets/finelinelogo.svg';
 
 const logoStyle = {
@@ -41,21 +41,21 @@ export default function Footer() {
       <Box
         sx={{
           display: 'flex',
-          justifyContent: 'space-between',
+          flexDirection: {xs: 'column', md: 'row'},
+          justifyContent: {xs: 'center', md: 'space-between'},
+          alignItems: {xs: 'center', md: 'flex-start'},
           pt: { xs: 2, sm: 4 },
           width: '100%',
-          // borderTop: '1px solid',
-          // borderColor: 'divider',
         }}
       >
-            <Box sx={{ ml: '-15px' }}>
-              <img
-                src={logoImg}
-                style={logoStyle}
-                alt="logo of Fine Line Laser Cutting"
-              />
-            </Box>
-        <div>
+        <Box sx={{ ml: '-15px' }}>
+          <img
+            src={logoImg}
+            style={logoStyle}
+            alt="logo of Fine Line Laser Cutting"
+          />
+        </Box>
+        <Box sx={{ textAlign: { xs: 'center', md: 'left' }, alignSelf: 'center' }}>
           <Typography
             variant="subtitle1"
             align="center"
@@ -67,7 +67,7 @@ export default function Footer() {
             Glendale, AZ 85301
           </Typography>
           <Copyright />
-        </div>
+        </Box>
         <Stack
           direction="row"
           justifyContent="left"
@@ -75,6 +75,7 @@ export default function Footer() {
           useFlexGap
           sx={{
             color: 'text.secondary',
+            mt: { xs: 2, md: 2 },
           }}
         >
           <IconButton
@@ -84,22 +85,6 @@ export default function Footer() {
             sx={{ alignSelf: 'center' }}
           >
             <FacebookIcon />
-          </IconButton>
-          <IconButton
-            color="inherit"
-            href="https://x.com/MaterialUI"
-            aria-label="X"
-            sx={{ alignSelf: 'center' }}
-          >
-            <TwitterIcon />
-          </IconButton>
-          <IconButton
-            color="inherit"
-            href="https://www.linkedin.com/company/mui/"
-            aria-label="LinkedIn"
-            sx={{ alignSelf: 'center' }}
-          >
-            <LinkedInIcon />
           </IconButton>
         </Stack>
       </Box>

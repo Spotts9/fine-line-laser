@@ -7,7 +7,7 @@ const imageFiles = images.keys().map(key => images(key));
 
 function ImageCarousel() {
   return (
-    <Box sx={{ maxWidth: 800, flexGrow: 1, margin: 'auto', mt: 5 }}>
+    <Box sx={{ maxWidth: { xs: '100%', sm: 800 }, flexGrow: 1, ml: 1, mt: 2 }}>
       <Carousel animation='slide'>
         {imageFiles.map((image, i) => (
           <Paper key={i} elevation={10}>

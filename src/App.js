@@ -67,20 +67,20 @@ ToggleCustomTheme.propTypes = {
 };
 function App() {
   const [mode, setMode] = React.useState('light');
-  const [showCustomTheme, setShowCustomTheme] = React.useState(true);
+  // const [showCustomTheme, setShowCustomTheme] = React.useState(true);
   const LPtheme = createTheme(getLPTheme(mode));
-  const defaultTheme = createTheme({ palette: { mode } });
+  // const defaultTheme = createTheme({ palette: { mode } });
 
   const toggleColorMode = () => {
     setMode((prev) => (prev === 'dark' ? 'light' : 'dark'));
   };
 
-  const toggleCustomTheme = () => {
-    setShowCustomTheme((prev) => !prev);
-  };
+  // const toggleCustomTheme = () => {
+  //   setShowCustomTheme((prev) => !prev);
+  // };
   return (
     <BrowserRouter>
-    <ThemeProvider theme={showCustomTheme ? LPtheme : defaultTheme}>
+    <ThemeProvider theme={LPtheme}>
 
     <CssBaseline />
     <HeaderBar  mode={mode} toggleColorMode={toggleColorMode} />
@@ -94,10 +94,10 @@ function App() {
       <Route path="/about" element={<AboutUs />}/>
     </Routes>
       {/* <Error type="404" default /> */}
-      <ToggleCustomTheme
+      {/* <ToggleCustomTheme
         showCustomTheme={showCustomTheme}
         toggleCustomTheme={toggleCustomTheme}
-      />
+      /> */}
     </ThemeProvider>
     </BrowserRouter>
   );
