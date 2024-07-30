@@ -94,10 +94,10 @@ function App() {
       <Route path="/about" element={<AboutUs />}/>
     </Routes>
       {/* <Error type="404" default /> */}
-      <ToggleCustomTheme
+      {/* <ToggleCustomTheme
         showCustomTheme={showCustomTheme}
         toggleCustomTheme={toggleCustomTheme}
-      />
+      /> */}
     </ThemeProvider>
     </BrowserRouter>
   );
