@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
@@ -9,7 +10,9 @@ import Typography from '@mui/material/Typography';
 import FacebookIcon from '@mui/icons-material/Facebook';
 // import LinkedInIcon from '@mui/icons-material/LinkedIn';
 // import TwitterIcon from '@mui/icons-material/X';
-import  logoImg from '../assets/finelinelogo.svg';
+// import  logoImg from '../assets/finelinelogo.svg';
+import logoNew from '../assets/finelinenewtransparent.png';
+import logoDark from '../assets/finelinedarktransparent.png';
 
 const logoStyle = {
   width: '140px',
@@ -27,6 +30,7 @@ function Copyright() {
 }
 
 export default function Footer() {
+  const theme = useTheme();
   return (
     <Container
       sx={{
@@ -50,7 +54,7 @@ export default function Footer() {
       >
         <Box sx={{ ml: '-15px' }}>
           <img
-            src={logoImg}
+            src={theme.palette.mode === 'light' ? logoNew : logoDark}
             style={logoStyle}
             alt="logo of Fine Line Laser Cutting"
           />
