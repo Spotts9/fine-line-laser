@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useTheme } from '@mui/material/styles';
 import { alpha } from '@mui/material';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -6,7 +7,16 @@ import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
+import logoNew from '../assets/laser cutting white.png';
+import logoDark from '../assets/laser cutting black.png';
+
+const logoStyle = {
+  width: 'auto',
+  height: '175px',
+};
+
 export default function Hero() {
+  const theme = useTheme();
     const scrollToSection = (sectionId) => {
         const sectionElement = document.getElementById(sectionId);
         const offset = 128;
@@ -43,6 +53,11 @@ export default function Hero() {
         }}
       >
         <Stack spacing={1} useFlexGap sx={{ width: { xs: '100%', sm: '70%' } }}>
+          <img
+            src={theme.palette.mode === 'light' ? logoNew : logoDark}
+            style={logoStyle}
+            alt="logo of fine line laser cutting"
+          />
           <Typography
             variant="h1"
             sx={{
