@@ -13,7 +13,9 @@ import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import ToggleColorMode from '../ToggleColorMode';
 
-import  logoImg from '../assets/finelinelogo.svg';
+// import  logoImg from '../assets/finelinelogo.svg';
+import logoNew from '../assets/finelinenewtransparent.png';
+import logoDark from '../assets/finelinedarktransparent.png';
 
 const logoStyle = {
   width: '140px',
@@ -97,7 +99,7 @@ function HeaderBar({ mode, toggleColorMode }) {
                 alt="logo of fine line laser cutting"
               /> */}
               <img
-                src={logoImg}
+                src={mode === 'light' ? logoNew : logoDark}
                 style={logoStyle}
                 alt="logo of fine line laser cutting"
                 onClick={() => scrollToSection('top')}
