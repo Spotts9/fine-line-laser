@@ -7,7 +7,7 @@ import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
-import logoNew from '../assets/laser cutting white.png';
+import logoNew from '../assets/finelinelaserlogocolor.png';
 import logoDark from '../assets/laser cutting black.png';
 
 const logoStyle = {
