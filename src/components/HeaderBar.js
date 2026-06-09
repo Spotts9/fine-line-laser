@@ -8,7 +8,6 @@ import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
-import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import ToggleColorMode from '../ToggleColorMode';
@@ -105,30 +104,30 @@ function HeaderBar({ mode, toggleColorMode }) {
                 onClick={() => scrollToSection('top')}
               />
               <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                <MenuItem
+                <Button
                   onClick={() => scrollToSection('about')}
-                  sx={{ py: '6px', px: '12px' }}
+                  sx={{ py: '6px', px: '12px', color: 'text.primary', textTransform: 'none' }}
                 >
                   <Typography variant="subtitle2" color="text.primary">
                     About Us
                   </Typography>
-                </MenuItem>
-                <MenuItem
+                </Button>
+                <Button
                   onClick={() => scrollToSection('contact')}
-                  sx={{ py: '6px', px: '12px' }}
+                  sx={{ py: '6px', px: '12px', color: 'text.primary', textTransform: 'none' }}
                 >
                   <Typography variant="subtitle2" color="text.primary">
                     Contact Us
                   </Typography>
-                </MenuItem>
-                <MenuItem
+                </Button>
+                <Button
                   onClick={() => scrollToSection('portfolio')}
-                  sx={{ py: '6px', px: '12px' }}
+                  sx={{ py: '6px', px: '12px', color: 'text.primary', textTransform: 'none' }}
                 >
                   <Typography variant="subtitle2" color="text.primary">
                     Portfolio
                   </Typography>
-                </MenuItem>
+                </Button>
               </Box>
             </Box>
             <Box
@@ -169,15 +168,24 @@ function HeaderBar({ mode, toggleColorMode }) {
                   >
                     <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
                   </Box>
-                  <MenuItem onClick={() => scrollToSection('about')}>
+                  <Button
+                    onClick={() => scrollToSection('about')}
+                    sx={{ justifyContent: 'flex-start', color: 'text.primary', px: 0, py: 1.5 }}
+                  >
                     About
-                  </MenuItem>
-                  <MenuItem onClick={() => scrollToSection('contact')}>
+                  </Button>
+                  <Button
+                    onClick={() => scrollToSection('contact')}
+                    sx={{ justifyContent: 'flex-start', color: 'text.primary', px: 0, py: 1.5 }}
+                  >
                     Contact Us
-                  </MenuItem>
-                  <MenuItem onClick={() => scrollToSection('portfolio')}>
+                  </Button>
+                  <Button
+                    onClick={() => scrollToSection('portfolio')}
+                    sx={{ justifyContent: 'flex-start', color: 'text.primary', px: 0, py: 1.5 }}
+                  >
                     Portfolio
-                  </MenuItem>
+                  </Button>
                   <Divider />
                 </Box>
               </Drawer>
